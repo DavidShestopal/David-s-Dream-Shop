@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../src/logo.svg';
 
+import styled from 'styled-components';
+
 import { ButtonContainer } from './Button';
 
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
+      <NavWraper className="navbar navbar-expand-sm  navbar-dark px-sm-5">
         {/* https://www.iconfinder.com/icons/1243689/call_phone_icon
 Creative Commons (Attribution 3.0 Unported);
 https://www.iconfinder.com/Makoto_msk  */}
@@ -17,7 +19,7 @@ https://www.iconfinder.com/Makoto_msk  */}
         <ul className="navbar-nav algin-items-center">
           <li className="nav-item ml-5">
             <Link to="/" className="nav-link">
-              Product
+              Products
             </Link>
           </li>
         </ul>
@@ -29,7 +31,16 @@ https://www.iconfinder.com/Makoto_msk  */}
             My Cart
           </ButtonContainer>
         </Link>
-      </nav>
+      </NavWraper>
     );
   }
 }
+
+const NavWraper = styled.nav`
+  background: var(--mainBlue);
+  .nav-link {
+    color: var(--mainWhite) !important;
+    font-size: 1.3rem;
+    text-transform: capitalized;
+  }
+`;

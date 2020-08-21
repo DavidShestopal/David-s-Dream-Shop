@@ -1,6 +1,8 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 
+console.log(process.env, 'yesss');
+
 export default class MyApp extends React.Component {
   render() {
     const onSuccess = (payment) => {
@@ -31,7 +33,8 @@ export default class MyApp extends React.Component {
     // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
     const client = {
-      sandbox: process.env.REACT_APP_APP_ID,
+      sandbox: process.env.REACT_APP_NOT_SECRET_CODE,
+
       production: 'YOUR-PRODUCTION-APP-ID',
     };
     // In order to get production's app-ID, you will have to send your app to Paypal for approval first
